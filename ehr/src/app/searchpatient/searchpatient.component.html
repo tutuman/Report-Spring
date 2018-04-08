@@ -1,0 +1,36 @@
+
+                <div class ="table-responsive">
+                        <table class="table table-hover table-bordered">
+                        <!-- hide table if no employees are present by  *ngIf = "employee.length" -->
+                            <tr>
+                                
+                                <th>ID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>M. Name</th>
+                                <th>Date of Birth</th>
+                                <th>Gender</th>
+                                <th>Address</th>
+                                <th>Contact Info</th>
+                                <th>Action</th>    
+                            </tr>
+
+                            <!-- using for loop to add the table row according to the new addition -->
+                            <tr *ngFor = "let pat of patient" >
+                                <td>{{pat.ID}}</td>
+                                <td>{{pat.FirstName}}</td>
+                                <td>{{pat.LastName}}</td>
+                                <td>{{pat.MiddleName}}</td>
+                                <td>{{pat.DoB}}</td>
+                                <td>{{pat.Gender}}</td>
+                                <td>{{pat.Address}}</td>
+                                <td>{{pat.Contact}}</td>
+                                <td>
+                                    <button class="btn btn-inverse">Activate</button>
+                                    <button class="btn btn-inverse">Deactivate</button>
+                                    <button class="btn btn-inverse">Update</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-inverse"><a [routerLink]="['/newpatientdescription']">Create New Patient</a></button>
+                    </div>
